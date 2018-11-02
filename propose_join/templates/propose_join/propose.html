@@ -1,58 +1,44 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Propose Club</title>
-    <link rel="stylesheet" href="{% static 'propose_join/css/style.css' %}">
-  </head>
-  <body>
-    <header>
-      <div id="brand" >
-        <h1>CLUBSportal</h1>
-      </div>
-    </header>
-            <nav>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Login/Registration</a></li>
-                <li class="current"><a href="#">Profile</a></li>
-                <li><a href="#">About</a></li>
-              </ul>
-            </nav>
-    <div class="">
-      <h1>Propose a club</h1>
-      <form class="" action="" method="">
-        <table>
-          <tr>
-            <td>Name :</td>
-            <td><input type="text" name="" value="" placeholder="Enter Club's name"></td>
-          </tr>
-          <tr>
-            <td>Category :</td>
-            <td><select class="" name="">
+{% extends "propose_join/base.html" %}
 
-            </select></td>
-          </tr>
-          <tr>
-            <td>Targetted people :</td>
-            <td><input type="text" name="" value="" placeholder="Who can join the club?"></td>
-          </tr>
-          <tr>
-            <td>Club admins :</td>
-            <td><input type="text" name="" value="" ></td>
-          </tr>
-          <tr>
-            <td>About :</td>
-            <td><textarea name="name" rows="8" cols="80" placeholder="Enter information about the club"></textarea></td>
-          </tr>
-          <tr>
-            <td>Logo :</td>
-            <td><input type= "file" name="" value=""></td>
-          </tr>
-        </table>
-        <input type="submit" name="" value="Register">
-      </form>
-    </div>
-  </body>
-</html>
+{% block title %}
+    Propose Club
+{% endblock %}
+
+{% block body %}
+
+  <div class="">
+    <h1>Propose a club</h1>
+    <form class="" action="" method="">
+      <table>
+        <tr>
+          <td>Name :</td>
+          <td><input type="text" name="" value="" placeholder="Enter Club's name"></td>
+        </tr>
+        <tr>
+          <td>Category :</td>
+          <td><select class="" name="">
+
+          </select></td>
+        </tr>
+        <tr>
+          <td>Targetted people :</td>
+          <td><input type="text" name="" value="" placeholder="Who can join the club?"></td>
+        </tr>
+        <tr>
+          <td>Club admins :</td>
+          <td><input type="text" name="" value="" ></td>
+        </tr>
+        <tr>
+          <td>About :</td>
+          <td><textarea name="name" rows="8" cols="80" placeholder="Enter information about the club"></textarea></td>
+        </tr>
+        <tr>
+          <td>Logo :</td>
+          <td><input type= "file" name="" value=""></td>
+        </tr>
+      </table>
+      <input type="submit" name="" value="Register">
+    </form>
+  </div>
+
+{% endblock %}
