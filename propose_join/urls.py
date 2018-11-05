@@ -3,5 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("",views.propose)
+    path("propose",views.propose),
+    path("join",views.join),
+    path("poll",views.poll),
 ]

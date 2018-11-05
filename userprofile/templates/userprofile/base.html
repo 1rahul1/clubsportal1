@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'userprofile/css/style.css' %}">
+  </head>
+  <body>
+    <header>
+      <div id="brand" >
+        <h1>CLUBSportal</h1>
+      </div>
+    </header>
+      <nav>
+        <ul>
+          <li class="current"><a href="index.html">Home</a></li>
+          <li><a href="#">Login/Registration</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      {% block body %}
+      {% endblock %}
+  </body>
+</html>

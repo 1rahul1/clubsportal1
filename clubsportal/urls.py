@@ -22,4 +22,5 @@ urlpatterns = [
     path('',include("home.urls")),
     path('propose_join/',include("propose_join.urls")),
     path('registration/',include("registration.urls")),
+    path('userprofile/',include("userprofile.urls")),
 ]
