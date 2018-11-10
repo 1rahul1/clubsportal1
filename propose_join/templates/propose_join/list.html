@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+{% for q in qs %}
+    <div style="min-height: 200px;">
+    <h1> Club Name : {{ q.club_name }}</h1>
+    <div>
+    {% if q.club_logo %}
+        <img src="{{ q.club_logo.url }}" alt="" height="100px" width="100px;" style="float: left;">
+            {% endif %}
+    </div>
+    <span style="margin-left: 10px;">
+
+            <ul style="margin-left: 100px;">
+      <li> club info :  {{ q.club_info }}</li>
+      <h3>Proposed by:      {{ q.name }}</h3>
+            </ul>
+</div>
+{% endfor %}
+
+</body>
+</html>
