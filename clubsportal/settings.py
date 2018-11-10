@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'propose_join.apps.ProposeJoinConfig',
     'registration.apps.RegistrationConfig',
     'userprofile.apps.UserprofileConfig',
+    'forum.apps.ForumConfig',
 ]
 
 MIDDLEWARE = [
