@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'propose_join.apps.ProposeJoinConfig',
     'registration.apps.RegistrationConfig',
     'userprofile.apps.UserprofileConfig',
+    'forum.apps.ForumConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR), 'static_')
+STATICFILES_DIRS= [os.path.join(BASE_DIR, 'static'),
+]
+
+MEDIA_URL='/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

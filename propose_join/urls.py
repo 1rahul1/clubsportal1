@@ -1,9 +1,8 @@
 from django.urls import path
-
 from . import views
 
-urlpatterns = [
-    path("propose",views.propose),
-    path("join",views.join),
-    path("poll",views.poll),
+urlpatterns=[
+    path('button', views.model_form_upload, name='button'),
+    path('list', views.list, name='list'),
+
 ]
