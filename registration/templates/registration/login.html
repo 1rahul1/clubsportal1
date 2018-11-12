@@ -8,12 +8,12 @@
 
   <div class="">
     <h1>Login</h1>
-    <form class="" action="" method="">
-      Email<br><input type="email" name="" value="" placeholder="Enter email"><br>
-      Password<br><input type="password" name="" value="" placeholder="Enter password">
+    <form class="" action="{% url 'registration:login_url' %}" method="post">
+      {% csrf_token %}
+      {{ form_inst }}
+      <input type="submit" value="login">
       <a href="#">Forgot Password</a><br>
-      <input type="submit" name="" value="Sign In"><br>
-      <a href="register.html">Create account</a>
+      <a href="{% url 'registration:signup_url' %}">Create account</a>
     </form>
   </div>
 
