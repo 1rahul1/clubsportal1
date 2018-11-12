@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title></title>
-  </head>
-  <body>
+{% extends "registration/base.html" %}
+
+{% block title %}
+    Confirm
+{% endblock %}
+
+{% block body %}
       <form class="" action="{% url 'registration:otp_url' %}" method="post">
         {% csrf_token %}
         <pre>Enter otp:<input type="text" name="typed_otp" value=""><br>
                        <input type="submit" value="submit"></pre>
       </form>
-  </body>
-</html>
+{% endblock %}
