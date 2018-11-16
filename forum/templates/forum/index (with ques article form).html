@@ -1,0 +1,66 @@
+{% extends "forum/base.html" %}
+
+{% block title %}
+    Club xyz
+{% endblock %}
+
+{% block body %}
+    <h1>Club xyz</h1>
+    <hr>
+    <h2>Add a post</h2>
+    <!-- <button type="button" name="button">Ask a question</button>
+    <button type="button" name="button">Post article</button>
+    <button type="button" name="button">Conduct poll</button> -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Add a Post
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Question</a>
+        <a class="dropdown-item" href="#">Article</a>
+        <a class="dropdown-item" href="#">Form</a>
+      </div>
+    </div>
+    <hr>
+    <!-- <div class="" id="question">
+      <h3>Question</h3>
+      <p>this is a sample question</p>
+    </div> -->
+    <div class="wrapper container-fluid">
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="card" style="border:3px solid #00a3cc;margin:15px;border-radius:10px;">
+            <div class="card-header" style="font-weight:bold;color:#00a3cc">Question</div>
+            <div class="card-body">
+              <h5 class="card-title" style="margin:10px;"><a href="#" style="color:#000000">Title</a></h5>
+              <p class="card-text" style="margin:10px;" >A sample question.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="card" style="border:3px solid #660033;margin:15px;border-radius:10px;">
+            <div class="card-header" style="font-weight:bold;color:#660033">Article</div>
+            <div class="card-body">
+              <h5 class="card-title" style="margin:10px;"><a href="#" style="color:#000000">Title</a></h5>
+              <p class="card-text" style="margin:10px;" >A sample question.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="card" style="border:3px solid #006600;margin:15px;border-radius:10px;">
+            <div class="card-header" style="font-weight:bold;color:#006600;">Form</div>
+            <div class="card-body">
+              <h5 class="card-title" style="margin:10px;"><a href="#" style="color:#000000">Title</a></h5>
+              <p class="card-text" style="margin:10px;" >A sample text.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
