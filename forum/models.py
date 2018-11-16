@@ -1,6 +1,6 @@
 from django.db import models
 # from registration.models import Users
-# from propose_join.models import Clubs
+# from propose_join.models import ExistingClub
 
 # Create your models here.
 # class Question(models.Model):
