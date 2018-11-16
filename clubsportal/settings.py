@@ -26,7 +26,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+#EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_HOST_USER = 'ynarendrareddy186@gmail.com'
+#EMAIL_HOST_PASSWORD = 'N@rendra100'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +44,8 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'propose_join.apps.ProposeJoinConfig',
     'registration.apps.RegistrationConfig',
+    'forum.apps.ForumConfig',
+    'administration.apps.AdministrationConfig',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -120,3 +127,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR), 'static_')
+STATICFILES_DIRS= [os.path.join(BASE_DIR, 'static'),
+]
+
+MEDIA_URL='/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='iiits2021'
+EMAIL_HOST_PASSWORD='qwerty@123'
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
