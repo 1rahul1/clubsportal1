@@ -5,3 +5,5 @@ from . import views
 urlpatterns = [
     path("profile",views.profile)
 ]
+# students urls in institute
+

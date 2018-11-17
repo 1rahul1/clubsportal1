@@ -5,6 +5,7 @@ import datetime
 from django.utils import timezone
 from django.contrib.auth import get_user_model
 from dateutil.relativedelta import relativedelta
+from registration.models import Profile
 
 
 # Create your models here.
@@ -57,7 +58,7 @@ class CustomUser(models.Model):
 
 
 class ProposedClub(models.Model):
-    name=models.ForeignKey(CustomUser,on_delete=models.PROTECT)
+    name=models.ForeignKey(Profile,on_delete=models.PROTECT)
     club_name=models.CharField(max_length=200,unique=True)
     club_info =models.TextField(max_length=20000)
     club_logo=models.ImageField(upload_to='media_/club_logo',)

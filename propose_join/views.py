@@ -1,8 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import ExistingClub,ProposedClub,CustomUser
+from .models import ExistingClub,ProposedClub
 from .forms import club_logo
 from django.contrib.auth import get_user_model
+from registration.models import Profile
 
 User = get_user_model()
 
@@ -22,7 +23,8 @@ def model_form_upload(request):
         print(request.POST)
         if form.is_valid():
             club1 = form.save(commit=False)
-            club1.name = CustomUser.objects.get(Username=request.user)
+            club1.name =Profile.objects.get(user=request.user)
+            #CustomUser.objects.get(Username=request.user)
             club1.save()
             return render(request,'propose_join/next.html')
     else:

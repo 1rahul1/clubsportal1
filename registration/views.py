@@ -5,6 +5,9 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as new,authenticate,logout as exit
 from django.core.mail import EmailMessage
 import random
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
 
 otp=random.randint(100000,999999)
 
@@ -35,7 +38,9 @@ def login(request):
         if form.is_valid():
             user=form.get_user()
             new(request,user)
-            return HttpResponse('Logged in')
+           # return HttpResponse('Logged in')
+           # return render(request, 'propose_join/next.html')
+        return HttpResponseRedirect(reverse("registration:propose_join:button"))
     else:
         form=AuthenticationForm()
     return render(request,'registration/login.html',{'form_inst':form})
