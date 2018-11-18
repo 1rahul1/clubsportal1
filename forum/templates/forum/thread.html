@@ -1,0 +1,43 @@
+{% extends "forum/base.html" %}
+
+{% block title %}
+    Add Post
+{% endblock %}
+
+{% block inner_sidebar %}Thread Number{% endblock inner_sidebar %}
+
+{% block body %}
+<div class="container">
+  <h1>Title</h1>
+  <p>Content</p>
+  <h6>By :</h6>
+  <h6>At :</h6>
+  <hr>
+  <div class="container">
+    <h2>Answers</h2>
+    <div class="">
+      <p>This is the answer</p>
+      <h6>By :</h6>
+      <h6>At :</h6>
+    </div>
+    <button class="btn btn-primary" type="submit">Reply</button>
+    <hr>
+    <div class="container">
+      <h3>Comments</h3>
+      <p>This is the comment</p>
+      <h6>By :</h6>
+      <h6>At :</h6>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <h4>Add answer</h4>
+  <form>
+    <div class="form-group">
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Post</button>
+  </form>
+</div>
+{% endblock %}
