@@ -6,6 +6,7 @@ from django.contrib.auth import get_user_model
 from registration.models import Profile
 from django.contrib.auth.models import UserManager
 from django.contrib.auth.decorators import login_required
+
 User = get_user_model()
 from django.shortcuts import get_object_or_404
 
@@ -19,11 +20,11 @@ def model_form_upload(request):
     if request.method == 'POST':
         form = club_logo(request.POST, request.FILES)
         print(request.user)
-
         print(request.POST)
         if form.is_valid():
             club1 = form.save(commit=False)
             club1.name =Profile.objects.get(user=request.user)
+
             club1.save()
             return render(request,'propose_join/next.html')
     else:
