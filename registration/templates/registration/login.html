@@ -1,12 +1,15 @@
-{% extends "registration/base.html" %}
+{% extends "registration/base2.html" %}
 
 {% block title %}
     Login
 {% endblock %}
 
+{% block inner_sidebar %}Login{% endblock inner_sidebar %}
+
 {% block body %}
 
-  <div class="">
+  <div class="container">
+
     <br><br>
     <h1>Login</h1>
     <form class="" action="{% url 'registration:login_url' %}" method="post">
@@ -22,7 +25,6 @@
       <input type="submit" value="login" style="width:125px"><br>
       <br>
       <a href="{% url 'registration:signup_url' %}"><u>Create account</u></a>
-    </form>
   </div>
 
 {% endblock %}

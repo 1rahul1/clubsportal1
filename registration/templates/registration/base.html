@@ -1,88 +1,64 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock title%}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style media="screen">
+      .navbar_bgcolor{
+        background-color:#660000;
+      }
+      .jumbotron_box2{
+        margin-bottom: 10px;
+      }
+      .jumbotron_box1{
+        background-color:#660000;
+        height: 10px;
+        border-bottom-left-radius:50%;
+        border-bottom-right-radius:50%;
+        /* padding-bottom:8px; */
+      }
+    </style>
   </head>
   <body>
-<!--    <header>
-      <div id="brand" >
-        <h1>CLUBSportal</h1>
-      </div>
-    </header>-->
-    {% if user.is_authenticated %}
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Clubs Portal</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class=""><a href="">Home</a></li>
-            <li><a href="{% url 'registration:view_profile_url' %}">Profile</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hi {{ request.user }}
-                <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{% url 'registration:edit_profile_url' %}">Edit profile</a></li>
-                  <li><a href="{% url 'registration:change_password_url' %}">Change Password</a></li>
-                  <li><a href="{% url 'registration:logout_url' %}">Log out</a></li>
+    <!-- navbar -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse navbar_bgcolor">
+
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainNav">
+                <span class="navbar-toggler-icon text-left"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <!-- <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="http://127.0.0.1:8000/">Home</a>
+                    <a class="nav-item nav-link" href="http://127.0.0.1:8000/registration/login">Login</a>
+                    <a class="nav-item nav-link" href="http://127.0.0.1:8000/userprofile/profile">Profile</a>
+                    <a class="nav-item nav-link" href="http://127.0.0.1:8000/#dev">Contact</a>
+                </div> -->
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="http://127.0.0.1:8000/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/registration/login">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/userprofile/profile">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://127.0.0.1:8000/#dev">Contact</a>
+                  </li>
                 </ul>
-              </li>
-              <!--<form class="" action="{% url 'registration:logout_url' %}" method="post">
-                  {% csrf_token %}
-                  <input type="submit" value="Logout" style="height:50px">
-              </form>-->
-            </li>
-          </ul>
-        </div>
-      </div>
+            </div>
     </nav>
-    {% else %}
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Clubs Portal</a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class=""><a href="index.html">Home</a></li>
-            <li><a href="">Profile</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="{% url 'registration:signup_url' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="{% url 'registration:login_url' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
+    <div class="jumbotron jumbotron-fluid text-white text-center jumbotron_box1">
+      <div class="container">
+          <h1 class="display-5">{% block inner_sidebar %}{% endblock inner_sidebar %}</h1>
       </div>
-    </nav>
-    {% endif %}
-
-<div class="container">
-  {% block body %}
-  {% endblock %}
-</div>
-
-</body>
+    </div>
+    {% block body %}
+    {% endblock body %}
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+>>>>>>> ae5b659be7cfc813eeb1d8b494c8a851d994928e
 </html>

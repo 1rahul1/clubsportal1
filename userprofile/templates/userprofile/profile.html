@@ -1,29 +1,11 @@
-{% extends "userprofile/base.html" %}
+{% extends "forum/base.html" %}
 
 {% block title %}
     Profile
 {% endblock %}
 
+{% block inner_sidebar %}Profile{% endblock inner_sidebar %}
+
 {% block body %}
-    <h1>Profile</h1>
-    <table>
-      <tr>
-        <form class="" action="" method="post">
-          <td><select class="" name="">
-            <option value="">Proposed Clubs</option>
-          </select></td>
-          <td><select class="" name="">
-            <option value="">Available Clubs</option>
-          </select></td>
-          <td><select class="" name="">
-            <option value="">Joined Clubs</option>
-          </select></td>
-        </form>
-        <td><a href="#">Global</a></td>
-        <td><a href="#">Propose a club</a></td>
-        <td><a href="#">Logout</a></td>
-        <td><a href="#">Settings</a></td>
-      </tr>
-    </table>
-    <hr>
+
 {% endblock %}

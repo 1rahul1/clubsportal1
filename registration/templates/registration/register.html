@@ -1,13 +1,17 @@
-{% extends "registration/base.html" %}
+{% extends "registration/base2.html" %}
 
 {% block title %}
     Register
 {% endblock %}
 
+{% block inner_sidebar %}Register{% endblock inner_sidebar %}
+
 {% block body %}
+
 <br>
 <br>
 <h1>SIGN UP</h1>
+<div class="container">
 <form class="" action="{% url 'registration:signup_url' %}" method="post">
   {% csrf_token %}
   {% for field in form_inst %}
@@ -31,5 +35,5 @@
   <input type="submit" value="Signup" style="width:85px">
   <input type="reset" name="" value="clear" style="width:85px">
 </form>
-
+</div>
 {% endblock %}
