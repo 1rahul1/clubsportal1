@@ -1,25 +1,14 @@
 {% extends "registration/base.html" %}
 
 {% block title %}
-    Register
+     Edit Profile
 {% endblock %}
 
 {% block body %}
-<br>
-<br>
-<h1>SIGN UP</h1>
-<form class="" action="{% url 'registration:signup_url' %}" method="post">
+<br><br><br>
+<h2>Edit Profile</h2>
+<form class="" action="{% url 'registration:edit_profile_url' %}" method="post">
   {% csrf_token %}
-  {% for field in form_inst %}
-    {{ field.label_tag }}<br>
-    {{ field }}<br>
-    <!--{% if field.help_text %}
-      <small style="color: grey help_text:non">{{ field.help_text }}</small>
-    {% endif %}-->
-      {% for error in field.errors %}
-        <p style="color: red">{{ error }}</p>
-      {% endfor %}
-  {% endfor %}
   {% for field in form1 %}
     {{ field.label_tag }}<br>
     {{ field }}<br>
@@ -27,9 +16,13 @@
         <p style="color: red">{{ error }}</p>
       {% endfor %}
   {% endfor %}
-  <br>
-  <input type="submit" value="Signup" style="width:85px">
-  <input type="reset" name="" value="clear" style="width:85px">
+  {% for field in form2 %}
+    {{ field.label_tag }}<br>
+    {{ field }}<br>
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+  {% endfor %}<br>
+  <input type="submit" name="" value="Edit profile" style="width:125px">
 </form>
-
 {% endblock %}

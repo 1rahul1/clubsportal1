@@ -6,6 +6,15 @@
   <body>
       <form class="" action="{% url 'registration:otp_url' %}" method="post">
         {% csrf_token %}
+        <input type="hidden" name="firstname" value="{{ firstname }}">
+        <input type="hidden" name="lastname" value="{{ lastname }}">
+        <input type="hidden" name="username" value="{{ username }}">
+        <input type="hidden" name="email" value="{{ email }}">
+        <input type="hidden" name="password1" value="{{ password1 }}">
+        <input type="hidden" name="password2" value="{{ password2 }}">
+        <input type="hidden" name="gender" value="{{ gender }}">
+        <input type="hidden" name="ug" value="{{ ug }}">
+        <input type="hidden" name="profession" value="{{ profession }}">
         <pre>Enter otp:<input type="text" name="typed_otp" value=""><br>
                        <input type="submit" value="submit"></pre>
       </form>

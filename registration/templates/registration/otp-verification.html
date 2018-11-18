@@ -1,0 +1,15 @@
+{% extends "registration/base.html" %}
+
+{% block title %}
+    Reset Password
+{% endblock %}
+
+{% block body %}
+<br><br><br>
+<form class="" action="{% url 'registration:reset_password_otp_verify_url' %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="user_name" value="{{ username }}">
+  Enter otp:<input type="text" name="typed_otp" value="">
+            <input type="submit" name="" value="submit">
+</form>
+{% endblock %}

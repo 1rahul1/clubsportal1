@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
+Do: pip install python-social-auth[django]
 """
 
 import os
@@ -46,6 +47,8 @@ INSTALLED_APPS = [
     'registration.apps.RegistrationConfig',
     'userprofile.apps.UserprofileConfig',
     'forum.apps.ForumConfig',
+    #'social_django'
+    #'social.apps.django_app.default'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'clubsportal.urls'
@@ -71,6 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #'social_django.context_processors.backends',
+                #'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -78,7 +84,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'clubsportal.wsgi.application'
 
+#AUTHENTICATION_BACKENDS = (
+#    'social_core.backends.github.GithubOAuth2',
+    #'social_core.backends.twitter.TwitterOAuth',
+    #'social_core.backends.facebook.FacebookOAuth2',
+#
+#    'django.contrib.auth.backends.ModelBackend',
+#)
 
+#LOGIN_URL = 'login_url'
+#LOGOUT_URL = 'logout_url'
+#LOGIN_REDIRECT_URL = 'view_profile_url'
+
+#SOCIAL_AUTH_GITHUB_KEY = 'ed7c5e3d6a9bd674f496'
+#SOCIAL_AUTH_GITHUB_SECRET = '82737827707a84a20cbd51702443dbef52784f45'
+
+#SOCIAL_AUTH_URL_NAMESPACE = "social"
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
