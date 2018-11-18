@@ -1,4 +1,4 @@
-{% extends "registration/base.html" %}
+{% extends "registration/base2.html" %}
 
 {% block title %}
     Register
@@ -8,38 +8,32 @@
 
 {% block body %}
 
+<br>
+<br>
+<h1>SIGN UP</h1>
 <div class="container">
-  <form class="" action="{% url 'registration:signup_url' %}" method="post">
-    {% csrf_token %}
-    <table>
-
-      {% for field in form_inst %}
-      <tr>
-        <td>{{ field.label_tag }}</td>
-        <td>{{ field }}</td>
-      </tr>
-        <!--{% if field.help_text %}
-          <small style="color: grey help_text:non">{{ field.help_text }}</small>
-        {% endif %}-->
-          {% for error in field.errors %}
-            <p style="color: red">{{ error }}</p>
-          {% endfor %}
+<form class="" action="{% url 'registration:signup_url' %}" method="post">
+  {% csrf_token %}
+  {% for field in form_inst %}
+    {{ field.label_tag }}<br>
+    {{ field }}<br>
+    <!--{% if field.help_text %}
+      <small style="color: grey help_text:non">{{ field.help_text }}</small>
+    {% endif %}-->
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
       {% endfor %}
-      {% for field in form1 %}
-      <tr>
-        <td>{{ field.label_tag }}</td>
-        <td>{{ field }}</td>
-      </tr>
-    <!--    {% if field.help_text %}
-          <small style="color: grey help_text:non">{{ field.help_text }}</small>
-        {% endif %}-->
-          {% for error in field.errors %}
-            <p style="color: red">{{ error }}</p>
-          {% endfor %}
+  {% endfor %}
+  {% for field in form1 %}
+    {{ field.label_tag }}<br>
+    {{ field }}<br>
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
       {% endfor %}
-    </table>
-    <input type="submit" value="Signup">
-  </form>
+  {% endfor %}
+  <br>
+  <input type="submit" value="Signup" style="width:85px">
+  <input type="reset" name="" value="clear" style="width:85px">
+</form>
 </div>
-
 {% endblock %}

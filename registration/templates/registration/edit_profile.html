@@ -1,0 +1,28 @@
+{% extends "registration/base2.html" %}
+
+{% block title %}
+     Edit Profile
+{% endblock %}
+
+{% block body %}
+<br><br><br>
+<h2>Edit Profile</h2>
+<form class="" action="{% url 'registration:edit_profile_url' %}" method="post">
+  {% csrf_token %}
+  {% for field in form1 %}
+    {{ field.label_tag }}<br>
+    {{ field }}<br>
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+  {% endfor %}
+  {% for field in form2 %}
+    {{ field.label_tag }}<br>
+    {{ field }}<br>
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+  {% endfor %}<br>
+  <input type="submit" name="" value="Edit profile" style="width:125px">
+</form>
+{% endblock %}

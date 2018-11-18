@@ -1,0 +1,38 @@
+{% extends "registration/base2.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block body %}
+<br><br><br>
+<div class="container">
+  <h2>User Profile</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Gender</th>
+        <th>UG</th>
+        <th>Profession</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr>
+          <td>{{ user.first_name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user }}</td>
+          <td>{{ user.profile.gender }}</td>
+          <td>{{ user.profile.ug }}</td>
+          <td>{{ user.profile.profession }}</td>
+
+        </tr>
+  </table>
+  <b><u><a href="{% url 'registration:edit_profile_url' %}">Edit profile</a></u></b>
+</div>
+
+{% endblock %}
